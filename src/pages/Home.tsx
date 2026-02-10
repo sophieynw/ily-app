@@ -13,6 +13,12 @@ const Home = () => {
         }
     }
 
+    const handleBlur = () => {
+        if (name.trim()) {
+            navigate(`/ily?name=${name}`);
+        }
+    };
+
     return (
         <>
             <div
@@ -31,6 +37,7 @@ const Home = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         onKeyDown={handleEnter}
+                        onBlur={handleBlur}
                     />
                 </Field>
                 <h1 className="text-3xl sm:text-5xl px-4 text-center font-bold">
